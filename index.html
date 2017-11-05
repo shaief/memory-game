@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+  <style>
+    .playing-card {
+      font-size: 80px;
+     cursor: pointer; cursor: hand;
+    }
+
+    .centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        /* bring your own prefixes */
+        transform: translate(-50%, -50%);
+    }
+
+   .success-message {
+       font-size: 100pt;
+   }
+
+   .below-game {
+       positin: fixed;
+       left: 50%;
+       z-index: 10;
+   }
+
+
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.css"
+  />
+</head>
+
+<body>
+  <div id="root">
+    <h1>User Score: <span v-text="userScore" ></span></h1>
+    <div class="container level">
+        <div v-show="userScore==8" class="centered success-message">Success!!!</div>
+        <div class="level-item">
+            <div class="columns is-gapless is-multiline">
+                <div v-for="(value, card) in showCards" class="column is-3 playing-card" @click="flipCard"
+                    :id="card" v-text="value"></div>
+            </div>
+        </div>
+    </div>
+    <div class="button is-primary below-game" v-show="twoCards"  @click="coverCards">Cover cards</div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
+  <script type="text/javascript" src="game.js"></script>
+</body>
+
+</html>
