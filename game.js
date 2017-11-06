@@ -42,11 +42,14 @@ var vm = new Vue({
       },
 
       created: function() {
-        cardsInUse = _.shuffle(this.cards) .slice(0, 8);
-        cardsInUse = [].concat(cardsInUse, cardsInUse);
-        this.cardsDeck = _.shuffle(cardsInUse);
+        this.shuffleCards();
       },
       methods: {
+        shuffleCards: function() {
+            cardsInUse = _.shuffle(this.cards) .slice(0, 8);
+            cardsInUse = [].concat(cardsInUse, cardsInUse);
+            this.cardsDeck = _.shuffle(cardsInUse);
+        },
         setupCards: function() {
           that = this;
           that.flippedCards.forEach(function(c){
@@ -62,6 +65,19 @@ var vm = new Vue({
         exposeCard: function(flippedCard) {
           var cardNumber = parseInt(flippedCard.split('card')[1]);
           this.showCards[flippedCard] = this.cardsDeck[cardNumber];
+        },
+        restartGame: function() {
+          that = this;
+          Object.keys(that.showCards).forEach(function(c){
+            that.showCards[c] = cardsBack;
+          });
+          this.shuffleCards();
+          this.flippedCards = [];
+          this.flippedCardsSymbols = [];
+          this.flippedCardsCounter = 0;
+          this.twoCards = false;
+          this.matchedCards = [];
+          this.userScore = 0;
         },
         coverCard: function(flippedCard) {
           this.showCards[flippedCard] = cardsBack;
