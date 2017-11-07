@@ -6,13 +6,13 @@ var vm = new Vue({
       el: '#root',
       data: function() {
         return {
-          cards: ['\uD83E\uDD80', '\uD83E\uDD81', '\uD83E\uDD82', '\uD83E\uDD83',
-                  '\uD83E\uDD84', '\uD83E\uDD85', '\uD83E\uDD86', '\uD83E\uDD87',
-                  '\uD83E\uDD88', '\uD83E\uDD89', '\uD83E\uDD8A', '\uD83E\uDD8B',
-                  '\uD83E\uDD8C', '\uD83E\uDD8D', '\uD83E\uDD8E', '\uD83E\uDD8F',
-                  '\uD83E\uDD90', '\uD83E\uDD91', '\uD83E\uDD92', '\uD83E\uDD93',
-                  '\uD83E\uDD94', '\uD83E\uDD95', '\uD83E\uDD96', '\uD83E\uDD97',
-                 ],
+          cards: ['\u{1F980}', '\u{1F981}', '\u{1F982}', '\u{1F983}',
+                  '\u{1F984}', '\u{1F985}', '\u{1F986}', '\u{1F987}',
+                  '\u{1F988}', '\u{1F989}', '\u{1F98A}', '\u{1F98B}',
+                  '\u{1F98C}', '\u{1F98D}', '\u{1F98E}', '\u{1F98F}',
+                  '\u{1F990}', '\u{1F991}', '\u{1F992}', '\u{1F993}',
+                  '\u{1F994}', '\u{1F995}', '\u{1F996}', '\u{1F997}',
+          ],
           cardsDeck: [],
           showCards: {
             card0: cardsBack,
