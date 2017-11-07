@@ -5,6 +5,15 @@
   <meta charset="UTF-8" />
   <title>Document</title>
   <style>
+   #root {
+       margin: 50px;
+   }
+
+   img.card-img {
+       width: 75px;
+       height: 75px;
+   }
+
     .playing-card {
       font-size: 80px;
      cursor: pointer; cursor: hand;
@@ -30,26 +39,32 @@
 
 
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.css" />
 </head>
 
 <body>
-  <a href="https://github.com/shaief/memory-game"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
-  <div id="root">
-    <h1>User Score: <span v-text="userScore" ></span></h1>
-    <div class="button is-warning" @click="restartGame">Restart Game</div>
-    <div class="container level">
-        <div v-show="userScore==8" class="centered success-message">Success!!!</div>
-        <div class="level-item">
-            <div class="columns is-gapless is-multiline">
-                <div v-for="(value, card) in showCards" class="column is-3 playing-card" @click="flipCard"
-                    :id="card" v-text="value"></div>
+    <a href="https://github.com/shaief/memory-game"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <div id="root">
+        <div class="container level">
+            <div v-show="userScore==8" class="centered success-message">Success!!!</div>
+            <div class="level-item">
+                <div class="columns is-gapless is-multiline">
+                    <div class="column is-2"> 
+                        <h1>User Score: <span v-text="userScore" ></span></h1>
+                        <div class="button is-warning" @click="restartGame">Restart Game</div>
+                    </div>
+                    <div class="column is-8">
+                        <div class="columns is-gapless is-multiline">
+                            <div v-for="(value, card) in showCards" class="column is-3 playing-card" @click="flipCard" :id="card">
+                                <img class="card-img" :src="'http://cdn.jsdelivr.net/emojione/assets/svg/' + value + '.svg'"></img>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="button is-primary below-game" v-show="twoCards"  @click="coverCards">Cover cards</div>
     </div>
-    <div class="button is-primary below-game" v-show="twoCards"  @click="coverCards">Cover cards</div>
-  </div>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
   <script type="text/javascript" src="game.js"></script>
