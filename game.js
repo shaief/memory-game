@@ -6,13 +6,13 @@ var vm = new Vue({
       el: '#root',
       data: function() {
         return {
-          cards: ['🦀', '🦁', '🦂', '🦃',
-                  '🦄', '🦅', '🦆', '🦇',
-                  '🦈', '🦉', '🦊', '🦋',
-                  '🦌', '🦍', '🦎', '🦏',
-                  '🦐', '🦑', '🦒', '🦓',
-                  '🦔', '🦕', '🦖',
-          ],
+          cards: ['\uD83E\uDD80', '\uD83E\uDD81', '\uD83E\uDD82', '\uD83E\uDD83',
+                  '\uD83E\uDD84', '\uD83E\uDD85', '\uD83E\uDD86', '\uD83E\uDD87',
+                  '\uD83E\uDD88', '\uD83E\uDD89', '\uD83E\uDD8A', '\uD83E\uDD8B',
+                  '\uD83E\uDD8C', '\uD83E\uDD8D', '\uD83E\uDD8E', '\uD83E\uDD8F',
+                  '\uD83E\uDD90', '\uD83E\uDD91', '\uD83E\uDD92', '\uD83E\uDD93',
+                  '\uD83E\uDD94', '\uD83E\uDD95', '\uD83E\uDD96', '\uD83E\uDD97',
+                 ],
           cardsDeck: [],
           showCards: {
             card0: cardsBack,
