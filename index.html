@@ -32,11 +32,14 @@
    }
 
    .below-game {
-       positin: fixed;
+       position: fixed !important;
        left: 50%;
        z-index: 10;
    }
 
+   img.logo {
+       width: 25px;
+   }
 
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.css" />
@@ -65,6 +68,13 @@
         </div>
         <div class="button is-primary below-game" v-show="twoCards"  @click="coverCards">Cover cards</div>
     </div>
+    <footer class="footer">
+        <p><img class="logo" src="https://avatars0.githubusercontent.com/u/899702?s=460&v=4"/> created by <a href="http://shaief.com">Shai Efrati</a></p>
+        <p>Emoji artwork is provided by <a href="https://emojitwo.github.io/">Emojitwo</a>, 
+            originally released as <a href="https://www.emojione.com">Emojione 2.2</a> by <a href="http://www.ranks.com">Ranks.com</a>
+            with contributions from the Emojitwo community
+            and is licensed under <a href="https://creativecommons.org/licenses/by/4.0/legalcode">CC-BY 4.0</a>.</p>
+    </footer>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
   <script type="text/javascript" src="game.js"></script>
