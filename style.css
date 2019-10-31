@@ -1,0 +1,35 @@
+#root {
+    margin: 50px;
+}
+
+img.card-img {
+    width: 75px;
+    height: 75px;
+}
+
+.playing-card {
+    font-size: 80px;
+    cursor: pointer; cursor: hand;
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+.success-message {
+    font-size: 100pt;
+}
+
+.below-game {
+    position: fixed !important;
+    left: 50%;
+    z-index: 10;
+}
+
+img.logo {
+    width: 25px;
+}
